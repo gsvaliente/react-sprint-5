@@ -1,30 +1,100 @@
-# React + TypeScript + Vite
+# ONBOARDING CARDS INTRODUCTION
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React application built using TypeScript and Vite. It displays a step-by-step tutorial/ onboarding using a card-base interface. Users can navigate through the tutorial steps using either the buttons, or clicking on the step indicators.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Install Dependencies
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+pnpm install
+#or
+npm install
+#or
+yarn install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Start the development server:
+
+```bash
+pnpm dev
+# or
+npm run dev
+# or
+yarn run dev
+```
+
+3. Open your browser in the localhost provided in the terminal
+   For example: http://localhost:5000.
+
+## Features
+
+- Built using React, TypeScript and Vite for fast development and efficient build.
+- Uses [TailwindCSS](https://tailwindcss.com/) for styling with the [DaisyUI](https://daisyui.com/) plugin for additional components.
+- Includes ESLint for code linting and focusing on React and TypeScript best practices.
+- Uses [react-icons](https://www.npmjs.com/package/react-icons) library for scalable vector icons.
+
+## Project Structure
+
+```
+├── README.md
+├── index.html
+├── package.json
+├── pnpm-lock.yaml
+├── postcss.config.js
+├── src
+│ ├── App.tsx
+│ ├── assets
+│ │ └── images
+│ │ ├── meditation.svg
+│ │ ├── programming.svg
+│ │ └── time_managment.svg
+│ ├── components
+│ │ ├── ArrowButton.tsx
+│ │ ├── Card.tsx
+│ │ └── Indicator.tsx
+│ ├── data
+│ │ └── tutorialData.ts
+│ ├── index.css
+│ ├── main.tsx
+│ ├── types
+│ │ └── tutorialData.type.ts
+│ └── vite-env.d.ts
+├── tailwind.config.js
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+```
+
+## Dependencies
+
+```
+├── node_modules
+│   ├── @eslint
+│   ├── @eslint-community
+│   ├── @types
+│   ├── @typescript-eslint
+│   ├── @vitejs
+│   ├── autoprefixer
+│   ├── daisyui
+│   ├── eslint
+│   ├── eslint-plugin-react-hooks
+│   ├── eslint-plugin-react-refresh
+│   ├── eslint-scope
+│   ├── eslint-visitor-keys
+│   ├── postcss
+│   ├── react
+│   ├── react-dom
+│   ├── react-icons
+│   ├── tailwindcss
+│   ├── typescript
+│   └── vite
+```
+
+## Building for Production
+
+To create the production build:
+
+```bash
+pnpm run build
+```
