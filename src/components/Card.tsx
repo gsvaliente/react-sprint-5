@@ -8,9 +8,16 @@ type CardProps = {
   data: TutorialData;
   onNextStep: () => void;
   onPrevStep: () => void;
+  onIndicator: (idx: number) => void;
 };
 
-export const Card = ({ data, onNextStep, onPrevStep, currStep }: CardProps) => {
+export const Card = ({
+  data,
+  onNextStep,
+  onPrevStep,
+  currStep,
+  onIndicator,
+}: CardProps) => {
   const { bgColor, description, image, title } = data;
 
   return (
@@ -32,6 +39,7 @@ export const Card = ({ data, onNextStep, onPrevStep, currStep }: CardProps) => {
         <Indicator
           data={tutorialData}
           currStep={currStep}
+          func={onIndicator}
         />
         <div className='card-actions justify-end mt-8'>
           {currStep === 2 && (

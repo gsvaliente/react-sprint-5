@@ -4,15 +4,20 @@ import { TutorialData } from '../types/tutorialData.type';
 type IndicatorProps = {
   data: TutorialData[];
   currStep: number;
+  func: (idx: number) => void;
 };
 
-export const Indicator = ({ data, currStep }: IndicatorProps) => {
+export const Indicator = ({ data, currStep, func }: IndicatorProps) => {
   return (
-    <div className='flex absolute bottom-12'>
+    <div className='flex absolute bottom-12 '>
       {data.map((el, idx) => {
         const isActive = idx === currStep;
         return (
-          <span key={el.title}>
+          <span
+            className='mr-1'
+            key={el.title}
+            onClick={() => func(idx)}
+          >
             {isActive ? <RxTarget /> : <RxShadowOuter />}
           </span>
         );

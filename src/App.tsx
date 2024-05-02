@@ -13,6 +13,10 @@ function App() {
     setStep((curr) => curr - 1);
   }
 
+  function handleIndicatorClick(idx: number) {
+    setStep(idx);
+  }
+
   return (
     <div className='flex justify-center items-center h-screen '>
       <Card
@@ -20,6 +24,7 @@ function App() {
         data={tutorialData[step]}
         onNextStep={handleNextStep}
         onPrevStep={handlePreviousStep}
+        onIndicator={handleIndicatorClick}
       />
     </div>
   );
