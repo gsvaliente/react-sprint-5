@@ -4,7 +4,7 @@ import { TutorialData } from '../types/tutorialData.type';
 type IndicatorProps = {
   data: TutorialData[];
   currStep: number;
-  func: (idx: number) => void;
+  func?: (idx: number) => void;
 };
 
 export const Indicator = ({ data, currStep, func }: IndicatorProps) => {
@@ -16,7 +16,7 @@ export const Indicator = ({ data, currStep, func }: IndicatorProps) => {
           <span
             className='mr-1'
             key={el.title}
-            onClick={() => func(idx)}
+            onClick={() => func && func(idx)}
           >
             {isActive ? <RxTarget /> : <RxShadowOuter />}
           </span>
