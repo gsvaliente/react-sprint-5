@@ -12,7 +12,6 @@ type CardProps = {
 
 export const Card = ({ data, onNextStep, onPrevStep, currStep }: CardProps) => {
   const { bgColor, description, image, title } = data;
-  console.log(currStep);
 
   return (
     <div className='card w-96 max-w-80 md:max-w-96 h-xl bg-base-100 shadow-xl bordered-t-'>
@@ -30,18 +29,11 @@ export const Card = ({ data, onNextStep, onPrevStep, currStep }: CardProps) => {
       <div className='card-body'>
         <h2 className='card-title'>{title}</h2>
         <p>{description}</p>
-        <div className='flex absolute bottom-10'>
-          {tutorialData.map((el, idx) => {
-            return (
-              <Indicator
-                key={el.title}
-                currStep={currStep}
-                index={idx}
-              />
-            );
-          })}
-        </div>
-        <div className='card-actions justify-end'>
+        <Indicator
+          data={tutorialData}
+          currStep={currStep}
+        />
+        <div className='card-actions justify-end mt-8'>
           {currStep === 2 && (
             <ArrowButton
               func={onPrevStep}
